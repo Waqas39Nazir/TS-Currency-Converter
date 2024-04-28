@@ -1,11 +1,14 @@
+//These are exchange rates from dollar to other currencies.
 const exchangeRates = {
-  PKR: 174.54, // Pakistani Rupee
-  AFN: 84.62, // Afghan Afghani
-  CNY: 6.44, // Chinese Yuan
-  IRR: 42105.26, // Iranian Rial
-  IQD: 1465.16, // Iraqi Dinar
-  SAR: 3.75, // Saudi Riyal
-  AED: 3.67, // United Arab Emirates Dirham
+  USD: [
+    { key: "PKR", value: 279.08 }, // Pakistani Rupee
+    { key: "AFN", value: 71.99 }, // Afghan Afghani
+    { key: "CNY", value: 6.44 }, // Chinese Yuan
+    { key: "IRR", value: 42105.26 }, // Iranian Rial
+    { key: "IQD", value: 1465.16 }, // Iraqi Dinar
+    { key: "SAR", value: 3.75 }, // Saudi Riyal
+    { key: "AED", value: 3.67 }, // United Arab Emirates Dirham],
+  ],
 };
 
 const currencies = [

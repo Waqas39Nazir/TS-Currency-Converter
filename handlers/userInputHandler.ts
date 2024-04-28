@@ -11,6 +11,12 @@ const userInputHandler = () => {
   inquirer
     .prompt([
       {
+        name: "amount",
+        message: gradientConsole("Please enter an amount"),
+        type: "input",
+        choices: currencies,
+      },
+      {
         name: "currentCurrency",
         message: gradientConsole("Please select the current currency"),
         type: "list",
@@ -24,8 +30,12 @@ const userInputHandler = () => {
       },
     ])
     .then((response) => {
-      console.log("Response:", response);
-      currencyConverter(response.currentCurrency, response.targetCurrency);
+      //   console.log("Response:", response);
+      currencyConverter(
+        response.amount,
+        response.currentCurrency,
+        response.targetCurrency
+      );
     })
     .catch((error) => {
       console.log("Error:", error);
