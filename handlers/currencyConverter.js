@@ -1,7 +1,12 @@
+import gradient from "gradient-string";
+import figlet from "figlet";
 import { exchangeRates } from "../utils/currenciesAndExchangeRates.js";
+const gradientConsole = (message) => {
+    return gradient.pastel.multiline(message);
+};
 const currencyConverter = (amount, currentCurrency, targetCurrency) => {
     if (currentCurrency === targetCurrency) {
-        console.log("Target currency and current current can not be the same");
+        console.log(gradientConsole("Target currency and current current can not be the same"));
     }
     else {
         const userInput = parseFloat(amount.toString()).toFixed(2);
@@ -19,17 +24,10 @@ const currencyConverter = (amount, currentCurrency, targetCurrency) => {
         });
         const exchangeRate = (exchangeRafeFromUSDToTargetCurr / exchangeRafeFromUSDToCurrentCurr).toFixed(2);
         const result = exchangeRate * userInput;
-        console.log(`Result:`, result);
-        // console.log("CurrA:", currCA);
-        // console.log("CurrB:", currTB);
-        // console.log(
-        //   "exchangeRafeFromUSDToCurrentCurr:",
-        //   exchangeRafeFromUSDToCurrentCurr
-        // );
-        // console.log(
-        //   "exchangeRafeFromUSDToTargetCurr:",
-        //   exchangeRafeFromUSDToTargetCurr
-        // );
+        const message = `Result: ${result}`;
+        figlet(message, (err, data) => {
+            console.log(gradient.pastel.multiline(data));
+        });
     }
 };
 export default currencyConverter;
