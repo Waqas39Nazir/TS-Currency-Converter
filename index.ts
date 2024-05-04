@@ -2,5 +2,4 @@
 
 import userInputHandler from "./handlers/userInputHandler.js";
 
-//
 userInputHandler();
