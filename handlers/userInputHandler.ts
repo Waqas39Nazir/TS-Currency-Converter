@@ -14,7 +14,13 @@ const userInputHandler = () => {
         name: "amount",
         message: gradientConsole("Please enter an amount"),
         type: "input",
-        choices: currencies,
+        validate: (value) => {
+          if (isNaN(value)) {
+            console.log(gradientConsole("\nHint:Please enter a number"));
+            return false;
+          }
+          return true;
+        },
       },
       {
         name: "currentCurrency",
