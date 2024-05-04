@@ -1,5 +1,5 @@
 {
-  "name": "@waqas-nazir/currency-converter",
+  "name": "@waqas_nazir/currency-converter",
   "version": "1.0.0",
   "description": "The open source and free currency converter package",
   "main": "index.js",
